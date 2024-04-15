@@ -1,0 +1,14 @@
+train: E:/NIÊN LUẬN CƠ SỞ/code backup/NIEN_LUAN_CO_SO/data/train/images
+val: E:/NIÊN LUẬN CƠ SỞ/code backup/NIEN_LUAN_CO_SO/data/valid/images
+test: E:/NIÊN LUẬN CƠ SỞ/code backup/NIEN_LUAN_CO_SO/data/test/images
+
+nc: 4
+names: ['Algal Leaf Spot', 'Leaf Blight', 'Leaf Spot', 'No Disease']
+
+roboflow:
+  workspace: hohuuthuanb2107812
+  project: tangcuongdl
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/hohuuthuanb2107812/tangcuongdl/dataset/1
+
