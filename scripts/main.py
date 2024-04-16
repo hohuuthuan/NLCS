@@ -8,8 +8,8 @@ import time
 class ProcessingDialog(QtWidgets.QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Đang xử lý")
-        self.setGeometry(100, 100, 150, 40)
+        self.setWindowTitle("ĐANG XỬ LÝ, VUI LÒNG CHỜ...")
+        self.setGeometry(100, 100, 230, 10)
         self.center()
 
     def center(self):
