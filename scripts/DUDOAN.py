@@ -8,8 +8,8 @@ import time
 class ProcessingDialog(QtWidgets.QDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.setWindowTitle("Đang xử lý")
-        self.setGeometry(100, 100, 150, 40)
+        self.setWindowTitle("ĐANG XỬ LÝ, VUI LÒNG CHỜ...")
+        self.setGeometry(100, 100, 230, 10)
         self.center()
 
     def center(self):
@@ -127,7 +127,7 @@ class Ui_MainWindow(object):
         self.processing_dialog.show()
 
         # Gọi đoạn mã predict.py với đường dẫn hình ảnh làm đối số
-        subprocess.Popen(["python", "E:/NIEN_LUAN_CO_SO/scripts/predict.py", "--image_path", self.image_path])
+        subprocess.Popen(["python", "E:/NLCS/scripts/predict.py", "--image_path", self.image_path])
         
         # Kiểm tra đến khi nào có thư mục predict mới xuất hiện
         source_folder = Path("C:/Users/hohuu/runs/detect")
@@ -148,6 +148,7 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+    MainWindow.setFixedSize(800, 600)
     MainWindow.show()
     sys.exit(app.exec())
     

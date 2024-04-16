@@ -23,7 +23,7 @@ class Ui_MainWindow(object):
         self.label_image.setGeometry(QtCore.QRect(30, 160, 290, 350))  # Đặt vị trí và kích thước cho label hình ảnh
 
         # Định nghĩa thư mục chứa kết quả
-        results_dir = "E:/NIEN_LUAN_CO_SO/results"
+        results_dir = "E:/NLCS/results"
 
         # Lấy danh sách tất cả các thư mục trong thư mục kết quả
         dirs = glob.glob(os.path.join(results_dir, "*"))
@@ -97,5 +97,6 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+    MainWindow.setFixedSize(900, 600)
     MainWindow.show()
     sys.exit(app.exec())

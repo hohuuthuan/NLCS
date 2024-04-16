@@ -15,9 +15,9 @@ args = parser.parse_args()
 # Định nghĩa các tham số
 task = "detect"
 mode = "predict"
-model_path = "E:/NIEN_LUAN_CO_SO/models/best.pt"
+model_path = "E:/NLCS/models/best.pt"
 source_path = args.image_path  # Sử dụng đường dẫn hình ảnh từ dòng lệnh
-output_path = "E:/NIEN_LUAN_CO_SO/results"  
+output_path = "E:/NLCS/results"  
 
 # Tạo lệnh
 command = f"yolo task={task} mode={mode} model=\"{model_path}\" source=\"{source_path}\""
@@ -49,13 +49,13 @@ loaibenh = ['Algal Leaf Spot', 'Leaf Blight', 'Leaf Spot', 'No Disease']
 
 if 'kq' in globals():
     if kq == loaibenh[0]:
-        os.system('python "E:/NIEN_LUAN_CO_SO/scripts/loaibenh/domrong.py"')
+        os.system('python "E:/NLCS/scripts/loaibenh/domrong.py"')
     elif kq == loaibenh[1]:
-        os.system('python "E:/NIEN_LUAN_CO_SO/scripts/loaibenh/chayla.py"')
+        os.system('python "E:/NLCS/scripts/loaibenh/chayla.py"')
     elif kq == loaibenh[2]:
-        os.system('python "E:/NIEN_LUAN_CO_SO/scripts/loaibenh/domla.py"')
+        os.system('python "E:/NLCS/scripts/loaibenh/domla.py"')
     elif kq == loaibenh[3]:
-        os.system('python "E:/NIEN_LUAN_CO_SO/scripts/loaibenh/nodisease.py"')
+        os.system('python "E:/NLCS/scripts/loaibenh/nodisease.py"')
 else:
     print("Không nhận dạng được")
-    os.system('python "E:/NIEN_LUAN_CO_SO/scripts/loaibenh/khongtimthay.py"')
+    os.system('python "E:/NLCS/scripts/loaibenh/khongtimthay.py"')
