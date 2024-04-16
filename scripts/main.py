@@ -44,7 +44,7 @@ class Ui_MainWindow(object):
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
 
-          # Thêm nút chọn hình ảnh
+        # Thêm nút chọn hình ảnh
         self.pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
         self.pushButton.setGeometry(QtCore.QRect(220, 230, 100, 30))
         self.pushButton.setText("Chọn hình ảnh")
