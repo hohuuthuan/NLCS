@@ -16,6 +16,49 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(480, 250, 370, 51))
         
+        # Logo
+        self.logoLabel = QtWidgets.QLabel(parent=self.centralwidget)
+        self.logoLabel.setGeometry(QtCore.QRect(10, 10, 200, 100))  # Điều chỉnh vị trí và kích thước theo ý muốn
+        # Tải hình ảnh logo và đặt nó cho QLabel
+        logo = QtGui.QPixmap("C:/Users/hohuu/Pictures/lá.png")
+        logo = logo.scaled(200, 100, QtCore.Qt.AspectRatioMode.KeepAspectRatio)
+        self.logoLabel.setPixmap(logo)
+        
+        
+        # Tên dự án
+        self.label__1 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label__1.setGeometry(QtCore.QRect(335, 10, 261, 71))
+        font = QtGui.QFont()
+        font.setPointSize(21)
+        self.label__1.setFont(font)
+        self.label__1.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label__1.setObjectName("label__1")
+        
+        self.label__2 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label__2.setGeometry(QtCore.QRect(170, 40, 600, 71))
+        font = QtGui.QFont()
+        font.setPointSize(21)
+        self.label__2.setFont(font)
+        self.label__2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label__2.setObjectName("label__2")
+
+        
+        self.label__3 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label__3.setGeometry(QtCore.QRect(825, 3, 151, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label__3.setFont(font)
+        self.label__3.setObjectName("label__3")
+        
+        
+        self.label__4 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label__4.setGeometry(QtCore.QRect(810, 20, 151, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label__4.setFont(font)
+        self.label__4.setObjectName("label__4")
+        
+        
         
         self.label_image = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_image.setGeometry(QtCore.QRect(30, 160, 290, 350))  # Đặt vị trí và kích thước cho label hình ảnh
@@ -56,10 +99,15 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "DỰ ĐOÁN BỆNH TRÊN CÂY SẦU RIÊNG"))
         self.label.setText(_translate("MainWindow", "Hình ảnh:"))
         self.label_2.setText(_translate("MainWindow", "KHÔNG NHẬN DẠNG ĐƯỢC"))
 
+        self.label__1.setText(_translate("MainWindow", "NIÊN LUẬN CƠ SỞ"))
+        self.label__2.setText(_translate("MainWindow", "DỰ ĐOÁN BỆNH TRÊN CÂY SẦU RIÊNG"))
+        self.label__3.setText(_translate("MainWindow", "B2107182"))
+        self.label__4.setText(_translate("MainWindow", "Hồ Hữu Thuận"))
+        
 
 if __name__ == "__main__":
     import sys

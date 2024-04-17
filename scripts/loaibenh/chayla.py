@@ -5,14 +5,61 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(918, 600)
+        
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
         self.label.setGeometry(QtCore.QRect(30, 110, 271, 51))
         font = QtGui.QFont()
+        font.setBold(True)
         font.setPointSize(14)
         self.label.setFont(font)
         self.label.setObjectName("label")
+        
+        # Logo
+        self.logoLabel = QtWidgets.QLabel(parent=self.centralwidget)
+        self.logoLabel.setGeometry(QtCore.QRect(10, 10, 200, 100))  # Điều chỉnh vị trí và kích thước theo ý muốn
+        # Tải hình ảnh logo và đặt nó cho QLabel
+        logo = QtGui.QPixmap("C:/Users/hohuu/Pictures/lá.png")
+        logo = logo.scaled(200, 100, QtCore.Qt.AspectRatioMode.KeepAspectRatio)
+        self.logoLabel.setPixmap(logo)
+        
+        
+        # Tên dự án
+        self.label__1 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label__1.setGeometry(QtCore.QRect(335, 10, 261, 71))
+        font = QtGui.QFont()
+        font.setPointSize(21)
+        self.label__1.setFont(font)
+        self.label__1.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label__1.setObjectName("label__1")
+        
+        self.label__2 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label__2.setGeometry(QtCore.QRect(170, 40, 600, 71))
+        font = QtGui.QFont()
+        font.setPointSize(21)
+        self.label__2.setFont(font)
+        self.label__2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label__2.setObjectName("label__2")
+
+        
+        self.label__3 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label__3.setGeometry(QtCore.QRect(835, 3, 151, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label__3.setFont(font)
+        self.label__3.setObjectName("label__3")
+        
+        
+        self.label__4 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label__4.setGeometry(QtCore.QRect(820, 20, 151, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label__4.setFont(font)
+        self.label__4.setObjectName("label__4")
+        
+        
+        
         
         
         self.label_image = QtWidgets.QLabel(parent=self.centralwidget)
@@ -44,8 +91,9 @@ class Ui_MainWindow(object):
         self.label_image.setScaledContents(True)  # Đặt hình ảnh co giãn theo kích thước của QLabel
         
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label_2.setGeometry(QtCore.QRect(480, 110, 271, 51))
+        self.label_2.setGeometry(QtCore.QRect(520, 110, 271, 51))
         font = QtGui.QFont()
+        font.setBold(True)
         font.setPointSize(14)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
@@ -79,19 +127,24 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "DỰ ĐOÁN BỆNH TRÊN CÂY SẦU RIÊNG"))
         self.label.setText(_translate("MainWindow", "Hình ảnh nhận dạng được:"))
         self.label_2.setText(_translate("MainWindow", "Phương pháp điều trị:"))
         self.textEdit.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
-"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Bệnh cháy lá</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:16pt; font-weight:600;\">Bệnh cháy lá</span></p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">1</span><span style=\" font-size:12pt;\">. Ngừng sử dụng phân đạm, tăng cường phân kali.</span></p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">2.</span><span style=\" font-size:12pt;\"> Ph</span><span style=\" font-family:\'Arial\',\'sans-serif\'; font-size:12pt; color:#000000; background-color:#ffffff;\">un lên lá hoặc có thể tưới lên đất các loại thuốc bảo vệ thực vật có hoạt chất như Validamycin, Streptomyces lydicus WYEC 108, Propineb, Phosphorous acid,…</span></p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Google Sans\',\'arial\',\'sans-serif\'; font-size:12pt; font-weight:600; color:#000000;\">3.</span><span style=\" font-family:\'Google Sans\',\'arial\',\'sans-serif\'; font-size:12pt; color:#000000;\"> </span><span style=\" font-family:\'Arial\',\'sans-serif\'; font-size:12pt; color:#333333; background-color:#ffffff;\">Thường xuyên vệ sinh vườn, dọn sạch tàn dư bệnh hại, dọn sạch cỏ dại quanh vườn và đem tiêu hủy.</span></p></body></html>"))
         
-
+        self.label__1.setText(_translate("MainWindow", "NIÊN LUẬN CƠ SỞ"))
+        self.label__2.setText(_translate("MainWindow", "DỰ ĐOÁN BỆNH TRÊN CÂY SẦU RIÊNG"))
+        self.label__3.setText(_translate("MainWindow", "B2107182"))
+        self.label__4.setText(_translate("MainWindow", "Hồ Hữu Thuận"))
+        
+        
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
