@@ -57,12 +57,16 @@ class Ui_MainWindow(object):
         self.textEdit = QtWidgets.QTextEdit(parent=self.centralwidget)
         self.textEdit.setGeometry(QtCore.QRect(320, 170, 571, 221))
         self.textEdit.setObjectName("textEdit")
-        self.lineEdit = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(380, 400, 411, 31))
+        
+        self.label_link = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_link.setGeometry(QtCore.QRect(450, 400, 411, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.lineEdit.setFont(font)
-        self.lineEdit.setObjectName("lineEdit")
+        self.label_link.setFont(font)
+        self.label_link.setText('<a href="https://vietthanghanoi.vn/benh-dom-la-tren-cay-sau-rieng/#:~:text=C%C3%A1c%20bi%E1%BB%87n%20ph%C3%A1p%20ph%C3%B2ng%20tr%E1%BB%AB%20b%E1%BB%87nh%20%C4%91%E1%BB%91m%20l%C3%A1%20g%C3%A2y%20h%E1%BA%A1i%20tr%C3%AAn%20s%E1%BA%A7u%20ri%C3%AAng&text=%E2%80%93%20B%E1%BB%95%20sung%20dinh%20d%C6%B0%E1%BB%A1ng%20c%C3%A2n,s%C3%A1t%20%C4%91%E1%BA%A5t%2C%20c%C3%A0nh%20giao%20t%C3%A1n." style="text-decoration: none">Tham khảo thêm cách phòng tránh tại đây.</a>')
+        self.label_link.setOpenExternalLinks(True)
+        self.label_link.setObjectName("label_link")
+        
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 891, 26))
@@ -88,7 +92,7 @@ class Ui_MainWindow(object):
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">1</span><span style=\" font-size:12pt;\">. Nên dùng thuốc chứa các loại hoạt chất như Mancozed + Metalaxyl (Rorigold 720WP) phun ướt đều 2 mặt lá. Phun 2 lần cách nhau từ 7-5 ngày để trị bệnh cho cây.</span></p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">2</span><span style=\" font-size:12pt;\">. Tăng cường bón phân hữu cơ vi sinh (Trichomix-CTD, Trimix-N1, ...) đặc biệt trong giai đoạn mùa mưa để tăng sức đề kháng cho cây.</span></p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">3</span><span style=\" font-size:12pt;\">. Cắt tỉa cành thông thoáng, đặc biệt là cành sát đất đối với cây từ 1-2 năm.</span></p></body></html>"))
-        self.lineEdit.setText(_translate("MainWindow", "Tham khảo thêm cách phòng tránh tại đây."))
+        
 
 
 if __name__ == "__main__":

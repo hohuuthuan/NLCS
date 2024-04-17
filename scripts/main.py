@@ -30,7 +30,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
 
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(280, 120, 261, 71))
+        self.label.setGeometry(QtCore.QRect(120, 40, 600, 71))
         font = QtGui.QFont()
         font.setPointSize(21)
         self.label.setFont(font)
@@ -40,20 +40,46 @@ class Ui_MainWindow(object):
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(60, 220, 151, 51))
         font = QtGui.QFont()
+        font.setBold(True)
         font.setPointSize(13)
         self.label_2.setFont(font)
         self.label_2.setObjectName("label_2")
 
+        
+        self.label_3 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_3.setGeometry(QtCore.QRect(710, 3, 151, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label_3.setFont(font)
+        self.label_3.setObjectName("label_3")
+        
+        
+        self.label_4 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_4.setGeometry(QtCore.QRect(695, 20, 151, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label_4.setFont(font)
+        self.label_4.setObjectName("label_4")
+
+        self.label_5 = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_5.setGeometry(QtCore.QRect(280, 10, 261, 71))
+        font = QtGui.QFont()
+        font.setPointSize(21)
+        self.label_5.setFont(font)
+        self.label_5.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.label_5.setObjectName("label_5")
+
+
         # Thêm nút chọn hình ảnh
         self.pushButton = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(220, 230, 100, 30))
+        self.pushButton.setGeometry(QtCore.QRect(63, 260, 100, 30))
         self.pushButton.setText("Chọn hình ảnh")
         self.pushButton.setObjectName("pushButton")
         self.pushButton.clicked.connect(self.open_image_dialog)
 
         # Thêm nút chọn hình ảnh khác và ẩn nó khi khởi tạo
         self.pushButton2 = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton2.setGeometry(QtCore.QRect(500, 230, 150, 30))  # Điều chỉnh vị trí và kích thước theo ý muốn
+        self.pushButton2.setGeometry(QtCore.QRect(185, 230, 150, 30))  # Điều chỉnh vị trí và kích thước theo ý muốn
         self.pushButton2.setText("Chọn hình ảnh khác")
         self.pushButton2.setObjectName("pushButton2")
         self.pushButton2.clicked.connect(self.open_image_dialog)
@@ -61,13 +87,44 @@ class Ui_MainWindow(object):
 
         # Thêm QLabel để hiển thị hình ảnh
         self.imageLabel = QtWidgets.QLabel(parent=self.centralwidget)
-        self.imageLabel.setGeometry(QtCore.QRect(220, 230, 240, 240))  # Điều chỉnh vị trí và kích thước theo ý muốn
+        self.imageLabel.setGeometry(QtCore.QRect(60, 265, 300, 300))  # Điều chỉnh vị trí và kích thước theo ý muốn
         self.imageLabel.setObjectName("imageLabel")
         self.imageLabel.hide()  # Ẩn QLabel khi khởi tạo
 
+        
+        # Tạo một QLabel mới để logo
+        self.logoLabel = QtWidgets.QLabel(parent=self.centralwidget)
+        self.logoLabel.setGeometry(QtCore.QRect(10, 10, 200, 100))  # Điều chỉnh vị trí và kích thước theo ý muốn
+        # Tải hình ảnh logo và đặt nó cho QLabel
+        logo = QtGui.QPixmap("C:/Users/hohuu/Pictures/lá.png")
+        logo = logo.scaled(200, 100, QtCore.Qt.AspectRatioMode.KeepAspectRatio)
+        self.logoLabel.setPixmap(logo)
+        
+
+        # Tạo một QLabel mới để logo
+        self.logoLabel = QtWidgets.QLabel(parent=self.centralwidget)
+        self.logoLabel.setGeometry(QtCore.QRect(350, 110, 400, 400))  # Điều chỉnh vị trí và kích thước theo ý muốn
+        # Tải hình ảnh logo và đặt nó cho QLabel
+        logo = QtGui.QPixmap("C:/Users/hohuu/Pictures/robo-tree.png")
+        logo = logo.scaled(400, 400, QtCore.Qt.AspectRatioMode.KeepAspectRatio)
+        self.logoLabel.setPixmap(logo)
+        
+        
+
+        # # Chèn ảnh nền
+        # palette = QtGui.QPalette()
+        # # Tải hình ảnh và tạo một QBrush
+        # image = QtGui.QImage("C:/Users/hohuu/Pictures/OIG3.jpg")
+        # brush = QtGui.QBrush(image)
+        # # Thiết lập brush như một bức tranh nền cho palette
+        # palette.setBrush(QtGui.QPalette.ColorRole.Window, brush)
+        # # Áp dụng palette cho MainWindow
+        # MainWindow.setPalette(palette)
+
+
 
         self.buttonBox = QtWidgets.QDialogButtonBox(parent=self.centralwidget)
-        self.buttonBox.setGeometry(QtCore.QRect(580, 470, 201, 61))
+        self.buttonBox.setGeometry(QtCore.QRect(580, 530, 201, 30))
         font = QtGui.QFont()
         font.setPointSize(14)
         self.buttonBox.setFont(font)
@@ -76,9 +133,6 @@ class Ui_MainWindow(object):
         self.buttonBox.rejected.connect(MainWindow.close)
         self.buttonBox.accepted.connect(self.handle_ok_button) 
 
-        self.timeEdit = QtWidgets.QTimeEdit(parent=self.centralwidget)
-        self.timeEdit.setGeometry(QtCore.QRect(10, 10, 118, 22))
-        self.timeEdit.setObjectName("timeEdit")
 
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
@@ -94,16 +148,17 @@ class Ui_MainWindow(object):
     
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "DỰ ĐOÁN BỆNH"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "DỰ ĐOÁN BỆNH TRÊN CÂY SẦU RIÊNG"))
+        self.label.setText(_translate("MainWindow", "DỰ ĐOÁN BỆNH TRÊN CÂY SẦU RIÊNG"))
         self.label_2.setText(_translate("MainWindow", "Chọn hình ảnh:"))
-    
-     
+        self.label_3.setText(_translate("MainWindow", "B2107182"))
+        self.label_4.setText(_translate("MainWindow", "Hồ Hữu Thuận"))
+        self.label_5.setText(_translate("MainWindow", "NIÊN LUẬN CƠ SỞ"))
     def open_image_dialog(self):
         fileName, _ = QtWidgets.QFileDialog.getOpenFileName(None, "QFileDialog.getOpenFileName()", "", "JPEG Files (*.jpg)")
         if fileName:
             pixmap = QtGui.QPixmap(fileName)
-            pixmap = pixmap.scaled(240, 240, QtCore.Qt.AspectRatioMode.IgnoreAspectRatio)
+            pixmap = pixmap.scaled(300, 300, QtCore.Qt.AspectRatioMode.IgnoreAspectRatio)
             self.imageLabel.setPixmap(pixmap)
             self.pushButton.hide()
             self.pushButton2.show()

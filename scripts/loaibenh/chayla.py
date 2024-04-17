@@ -43,8 +43,6 @@ class Ui_MainWindow(object):
         self.label_image.setPixmap(pixmap)
         self.label_image.setScaledContents(True)  # Đặt hình ảnh co giãn theo kích thước của QLabel
         
-        
-
         self.label_2 = QtWidgets.QLabel(parent=self.centralwidget)
         self.label_2.setGeometry(QtCore.QRect(480, 110, 271, 51))
         font = QtGui.QFont()
@@ -54,12 +52,19 @@ class Ui_MainWindow(object):
         self.textEdit = QtWidgets.QTextEdit(parent=self.centralwidget)
         self.textEdit.setGeometry(QtCore.QRect(320, 160, 591, 191))
         self.textEdit.setObjectName("textEdit")
-        self.lineEdit = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(410, 380, 411, 31))
+        
+        
+        self.label_link = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_link.setGeometry(QtCore.QRect(450, 380, 411, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.lineEdit.setFont(font)
-        self.lineEdit.setObjectName("lineEdit")
+        self.label_link.setFont(font)
+        self.label_link.setText('<a href="https://binhminh.tayninh.gov.vn/vi/news/tin-tuc-hoat-dong/bien-phap-phong-tru-benh-chay-la-chet-ngon-tren-cay-sau-rieng-va-kinh-nghiem-quan-ly-benh-cua-nong-dan-huyen-tan-bien-6060.html#:~:text=%2D%20Kh%C3%B4ng%20tr%E1%BB%93ng%20qu%C3%A1%20d%C3%A0y%2C%20c%E1%BA%AFt,g%C3%A2y%20h%E1%BA%A1i%20%E1%BB%9F%20trong%20%C4%91%E1%BA%A5t." style="text-decoration: none">Tham khảo thêm cách phòng tránh tại đây.</a>')
+        self.label_link.setOpenExternalLinks(True)
+        self.label_link.setObjectName("label_link")
+
+
+        
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 918, 26))
@@ -85,8 +90,7 @@ class Ui_MainWindow(object):
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">1</span><span style=\" font-size:12pt;\">. Ngừng sử dụng phân đạm, tăng cường phân kali.</span></p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">2.</span><span style=\" font-size:12pt;\"> Ph</span><span style=\" font-family:\'Arial\',\'sans-serif\'; font-size:12pt; color:#000000; background-color:#ffffff;\">un lên lá hoặc có thể tưới lên đất các loại thuốc bảo vệ thực vật có hoạt chất như Validamycin, Streptomyces lydicus WYEC 108, Propineb, Phosphorous acid,…</span></p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Google Sans\',\'arial\',\'sans-serif\'; font-size:12pt; font-weight:600; color:#000000;\">3.</span><span style=\" font-family:\'Google Sans\',\'arial\',\'sans-serif\'; font-size:12pt; color:#000000;\"> </span><span style=\" font-family:\'Arial\',\'sans-serif\'; font-size:12pt; color:#333333; background-color:#ffffff;\">Thường xuyên vệ sinh vườn, dọn sạch tàn dư bệnh hại, dọn sạch cỏ dại quanh vườn và đem tiêu hủy.</span></p></body></html>"))
-        self.lineEdit.setText(_translate("MainWindow", "Tham khảo thêm cách phòng tránh tại đây."))
-
+        
 
 if __name__ == "__main__":
     import sys

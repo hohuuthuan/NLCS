@@ -57,19 +57,23 @@ class Ui_MainWindow(object):
         self.label_2.setObjectName("label_2")
         self.textEdit = QtWidgets.QTextEdit(parent=self.centralwidget)
         self.textEdit.setGeometry(QtCore.QRect(320, 170, 571, 211))
-        
         self.textEdit.setObjectName("textEdit")
-        self.lineEdit = QtWidgets.QLineEdit(parent=self.centralwidget)
-        self.lineEdit.setGeometry(QtCore.QRect(380, 400, 411, 31))
+        
+        self.label_link = QtWidgets.QLabel(parent=self.centralwidget)
+        self.label_link.setGeometry(QtCore.QRect(450, 380, 411, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.lineEdit.setFont(font)
-        self.lineEdit.setObjectName("lineEdit")
+        self.label_link.setFont(font)
+        self.label_link.setText('<a href="https://nongnghiepthuanthien.vn/cach-xu-ly-va-phong-ngua-benh-dom-rong-tren-cay-sau-rieng/#3_Cach_xu_ly_va_phong_ngua_benh_dom_rong_tren_sau_rieng" style="text-decoration: none">Tham khảo thêm cách phòng tránh tại đây.</a>')
+        self.label_link.setOpenExternalLinks(True)
+        self.label_link.setObjectName("label_link")
+        
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 891, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
+        
         self.statusbar = QtWidgets.QStatusBar(parent=MainWindow)
         self.statusbar.setObjectName("statusbar")
         MainWindow.setStatusBar(self.statusbar)
@@ -91,7 +95,7 @@ class Ui_MainWindow(object):
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">1</span><span style=\" font-size:12pt;\">. Nhà vườn sử dụng chế phẩm vaccin kết hợp với siêu đồng phun kép 2 lần cách nhau 2-3 ngày.</span></p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">2</span><span style=\" font-size:12pt;\">. Phun ướt đấm thân cành và hai mặt lá để tẩy rửa mảng rong và diệt tảo gây hại, đồng thời diệt các loại nấm khuẩn và kích kháng cho cây. </span></p>\n"
 "<p align=\"justify\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">3</span><span style=\" font-size:12pt;\">. Nếu bệnh trên thân, cành thì pha đậm đặc dung dịch vaccin và siêu đồng rồi quét đậm lên thân, cành.</span></p></body></html>"))
-        self.lineEdit.setText(_translate("MainWindow", "Tham khảo thêm cách phòng tránh tại đây."))
+        
 
 
 if __name__ == "__main__":
