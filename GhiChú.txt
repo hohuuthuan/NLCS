@@ -38,3 +38,7 @@ pip install git+https://github.com/ultralytics/yolov5.git
 3. Leaf Spot (Vết Đốm Lá):
 
 No Disease (Không Bệnh): Đây là trạng thái của cây khi không có dấu hiệu của bất kỳ bệnh trên lá nào.
+
+
+đóng gói thành file .exe:
+pyinstaller --onefile yourprogram.py

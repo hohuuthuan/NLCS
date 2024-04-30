@@ -96,7 +96,7 @@ class Ui_MainWindow(object):
         self.logoLabel = QtWidgets.QLabel(parent=self.centralwidget)
         self.logoLabel.setGeometry(QtCore.QRect(10, 10, 200, 100))  # Điều chỉnh vị trí và kích thước theo ý muốn
         # Tải hình ảnh logo và đặt nó cho QLabel
-        logo = QtGui.QPixmap("C:/Users/hohuu/Pictures/lá.png")
+        logo = QtGui.QPixmap("E:/NLCS/GUI_image/lá.png")
         logo = logo.scaled(200, 100, QtCore.Qt.AspectRatioMode.KeepAspectRatio)
         self.logoLabel.setPixmap(logo)
         
@@ -105,7 +105,7 @@ class Ui_MainWindow(object):
         self.logoLabel = QtWidgets.QLabel(parent=self.centralwidget)
         self.logoLabel.setGeometry(QtCore.QRect(350, 110, 400, 400))  # Điều chỉnh vị trí và kích thước theo ý muốn
         # Tải hình ảnh logo và đặt nó cho QLabel
-        logo = QtGui.QPixmap("C:/Users/hohuu/Pictures/robo-tree.png")
+        logo = QtGui.QPixmap("E:/NLCS/GUI_image/robo-tree.png")
         logo = logo.scaled(400, 400, QtCore.Qt.AspectRatioMode.KeepAspectRatio)
         self.logoLabel.setPixmap(logo)
         
@@ -185,7 +185,7 @@ class Ui_MainWindow(object):
         subprocess.Popen(["python", "E:/NLCS/scripts/predict.py", "--image_path", self.image_path])
         
         # Kiểm tra đến khi nào có thư mục predict mới xuất hiện
-        source_folder = Path("C:/Users/hohuu/runs/detect")
+        source_folder = Path("E:/NLCS/results")
         old_folders = [f for f in os.listdir(source_folder) if f.startswith('predict')]
         while True:
             new_folders = [f for f in os.listdir(source_folder) if f.startswith('predict')]

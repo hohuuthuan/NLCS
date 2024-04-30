@@ -20,18 +20,18 @@ source_path = args.image_path  # Sử dụng đường dẫn hình ảnh từ d�
 output_path = "E:/NLCS/results"  
 
 # Tạo lệnh
-command = f"yolo task={task} mode={mode} model=\"{model_path}\" source=\"{source_path}\""
+command = f"yolo task={task} mode={mode} model=\"{model_path}\" source=\"{source_path}\" --project=\"{output_path}\""
 
 # Chạy lệnh
 os.system(command)
 
 # Tìm thư mục predict mới nhất
-source_folder = Path("C:/Users/hohuu/runs/detect")
+source_folder = Path(output_path)
 latest_subfolder = max((source_folder / f).resolve() for f in os.listdir(source_folder) if f.startswith('predict'))
 
-# Sao chép thư mục
-destination_path = os.path.join(output_path, latest_subfolder.name)
-shutil.copytree(latest_subfolder, destination_path)
+# Đường dẫn đến thư mục chứa kết quả dự đoán
+destination_path = latest_subfolder
+
 
 # Load a pretrained YOLOv8n model
 model = YOLO(model_path)
