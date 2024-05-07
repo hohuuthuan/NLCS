@@ -1,6 +1,6 @@
-train: E:/NIÊN LUẬN CƠ SỞ/code backup/NIEN_LUAN_CO_SO/data/train/images
-val: E:/NIÊN LUẬN CƠ SỞ/code backup/NIEN_LUAN_CO_SO/data/valid/images
-test: E:/NIÊN LUẬN CƠ SỞ/code backup/NIEN_LUAN_CO_SO/data/test/images
+train: E:/NLCS/data/train/images
+val: E:/NLCS/data/valid/images
+test: E:/NLCS/data/test/images
 
 nc: 4
 names: ['Algal Leaf Spot', 'Leaf Blight', 'Leaf Spot', 'No Disease']

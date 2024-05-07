@@ -1,4 +1,3 @@
-from asyncio.windows_events import NULL
 import os
 import shutil
 from pathlib import Path
@@ -25,12 +24,8 @@ command = f"yolo task={task} mode={mode} model=\"{model_path}\" source=\"{source
 # Chạy lệnh
 os.system(command)
 
-# Tìm thư mục predict mới nhất
-source_folder = Path(output_path)
-latest_subfolder = max((source_folder / f).resolve() for f in os.listdir(source_folder) if f.startswith('predict'))
-
-# Đường dẫn đến thư mục chứa kết quả dự đoán
-destination_path = latest_subfolder
+# Đường dẫn đến hình ảnh dự đoán
+destination_path = source_path
 
 
 # Load a pretrained YOLOv8n model

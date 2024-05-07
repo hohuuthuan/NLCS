@@ -165,7 +165,7 @@ class Ui_MainWindow(object):
             self.imageLabel.show()
             self.image_selected = True
             self.image_path = fileName
-            
+    
     def handle_ok_button(self):
         if not self.image_selected:
             msg = QtWidgets.QMessageBox()
