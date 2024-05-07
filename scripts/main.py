@@ -1,9 +1,8 @@
-from PyQt6 import QtCore, QtGui, QtWidgets
-import subprocess
-import os
-import glob
-from pathlib import Path
-import time
+from PyQt6 import QtCore, QtGui, QtWidgets  # PyQt6 là một bộ thư viện Python dùng để tạo giao diện người dùng đồ họa (GUI)
+import subprocess                           # Dùng để tạo và quản lý các tiến trình con
+import os                                   # Cung cấp các hàm để tương tác với hệ điều hành
+from pathlib import Path                    # pathlib dùng để xử lý các đường dẫn một cách dễ dàng và linh hoạt hơn so với os.path.
+import time                                 # Thư viện time trong Python cung cấp các hàm để làm việc với thời gian
 
 class ProcessingDialog(QtWidgets.QDialog):
     def __init__(self, parent=None):
@@ -30,7 +29,7 @@ class Ui_MainWindow(object):
         self.centralwidget.setObjectName("centralwidget")
 
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(120, 40, 600, 71))
+        self.label.setGeometry(QtCore.QRect(120, 40, 600, 71)) # trái sang, trên xuống, chiều rộng, chiều cao
         font = QtGui.QFont()
         font.setPointSize(21)
         self.label.setFont(font)
@@ -75,11 +74,11 @@ class Ui_MainWindow(object):
         self.pushButton.setGeometry(QtCore.QRect(63, 260, 100, 30))
         self.pushButton.setText("Chọn hình ảnh")
         self.pushButton.setObjectName("pushButton")
-        self.pushButton.clicked.connect(self.open_image_dialog)
+        self.pushButton.clicked.connect(self.open_image_dialog) # Sự kiện click vào thì mở cửa sổ chọn file
 
         # Thêm nút chọn hình ảnh khác và ẩn nó khi khởi tạo
         self.pushButton2 = QtWidgets.QPushButton(parent=self.centralwidget)
-        self.pushButton2.setGeometry(QtCore.QRect(185, 230, 150, 30))  # Điều chỉnh vị trí và kích thước theo ý muốn
+        self.pushButton2.setGeometry(QtCore.QRect(185, 230, 150, 30))  # Điều chỉnh vị trí và kích thước
         self.pushButton2.setText("Chọn hình ảnh khác")
         self.pushButton2.setObjectName("pushButton2")
         self.pushButton2.clicked.connect(self.open_image_dialog)
@@ -87,7 +86,7 @@ class Ui_MainWindow(object):
 
         # Thêm QLabel để hiển thị hình ảnh
         self.imageLabel = QtWidgets.QLabel(parent=self.centralwidget)
-        self.imageLabel.setGeometry(QtCore.QRect(60, 265, 300, 300))  # Điều chỉnh vị trí và kích thước theo ý muốn
+        self.imageLabel.setGeometry(QtCore.QRect(60, 265, 300, 300))  # Điều chỉnh vị trí và kích thước
         self.imageLabel.setObjectName("imageLabel")
         self.imageLabel.hide()  # Ẩn QLabel khi khởi tạo
 
@@ -146,6 +145,7 @@ class Ui_MainWindow(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
     
+    # Hàm đặt hoặc cập nhật văn bản cho các đối tượng hiển thị
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "DỰ ĐOÁN BỆNH TRÊN CÂY SẦU RIÊNG"))
@@ -154,7 +154,10 @@ class Ui_MainWindow(object):
         self.label_3.setText(_translate("MainWindow", "B2107182"))
         self.label_4.setText(_translate("MainWindow", "Hồ Hữu Thuận"))
         self.label_5.setText(_translate("MainWindow", "NIÊN LUẬN CƠ SỞ"))
+    
+    # Hàm mở chọn file trên máy tính
     def open_image_dialog(self):
+        # Ràng buộc chọn định dạng JPG
         fileName, _ = QtWidgets.QFileDialog.getOpenFileName(None, "QFileDialog.getOpenFileName()", "", "JPEG Files (*.jpg)")
         if fileName:
             pixmap = QtGui.QPixmap(fileName)
@@ -166,6 +169,7 @@ class Ui_MainWindow(object):
             self.image_selected = True
             self.image_path = fileName
     
+    # Hàm xử lý người dùng chọn nút OK
     def handle_ok_button(self):
         if not self.image_selected:
             msg = QtWidgets.QMessageBox()
@@ -203,6 +207,7 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
+    # Sét cho cửa sổ cứng ở 1 kích thước
     MainWindow.setFixedSize(800, 600)
     MainWindow.show()
     sys.exit(app.exec())

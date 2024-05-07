@@ -1,7 +1,5 @@
 import os
-import shutil
-from pathlib import Path
-import argparse
+import argparse # Xử lý các đối số dòng lệnh
 from ultralytics import YOLO
 
 # Tạo trình phân tích cú pháp đối số
@@ -28,16 +26,15 @@ os.system(command)
 destination_path = source_path
 
 
-# Load a pretrained YOLOv8n model
+# Chạy nhận diện lại để lấy ra tên nhãn
 model = YOLO(model_path)
-
 names = model.names
 result = model.predict(source=destination_path)
 
 for r in result:
     for c in r.boxes.cls:
         print(names[int(c)])
-        kq = names[int(c)]
+        kq = names[int(c)]      # Lấy ra tên nhãn
 
 
 loaibenh = ['Algal Leaf Spot', 'Leaf Blight', 'Leaf Spot', 'No Disease']
