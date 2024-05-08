@@ -10,12 +10,16 @@ class ProcessingDialog(QtWidgets.QDialog):
         self.setWindowTitle("ĐANG XỬ LÝ, VUI LÒNG CHỜ...")
         self.setGeometry(100, 100, 230, 10)
         self.center()
-
+        
+        # Đặt biểu tượng cho cửa sổ
+        self.setWindowIcon(QtGui.QIcon('E:/NLCS/GUI_image/lá.ico'))
+        
     def center(self):
         qr = self.frameGeometry()
         cp = QtGui.QGuiApplication.primaryScreen().geometry().center()
         qr.moveCenter(cp)
         self.move(qr.topLeft())
+
 
 class Ui_MainWindow(object):
     def __init__(self):
