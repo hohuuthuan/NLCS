@@ -6,6 +6,12 @@ class Ui_MainWindow(object):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(918, 600)
         
+        # Tạo một đối tượng QIcon
+        icon = QtGui.QIcon('E:/NLCS/GUI_image/lá.png')
+        # Đặt biểu tượng cho cửa sổ
+        MainWindow.setWindowIcon(icon)
+        
+        
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.label = QtWidgets.QLabel(parent=self.centralwidget)
@@ -21,7 +27,7 @@ class Ui_MainWindow(object):
         self.logoLabel.setGeometry(QtCore.QRect(10, 10, 200, 100))  # Điều chỉnh vị trí và kích thước theo ý muốn
         # Tải hình ảnh logo và đặt nó cho QLabel
         logo = QtGui.QPixmap("E:/NLCS/GUI_image/lá.png")
-        logo = logo.scaled(200, 100, QtCore.Qt.AspectRatioMode.KeepAspectRatio)
+        logo = logo.scaled(100, 70, QtCore.Qt.AspectRatioMode.KeepAspectRatio)
         self.logoLabel.setPixmap(logo)
         
         

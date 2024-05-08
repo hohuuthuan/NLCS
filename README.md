@@ -22,8 +22,8 @@ Download thư mục NLCS
 
 
 # Cài đặt các thư viện cần thiết
-Phiên bản tensorflow: 2.13.0    pip install tensorflow==2.13.0
-Phiên bản OpenCV: 4.7.0         pip install opencv-python==4.7.0
+Phiên bản tensorflow: 2.13.0    pip install tensorflow
+Phiên bản OpenCV: 4.7.0         pip install opencv-python
 Phiên bản Python: 3.8.18        Tải trên website
 Phiên bản CUDA: 12.3.2          Tải trên website NVIDIA
 Phiên bản Torch: 2.1.2+cu121    install torch torchvision
@@ -37,5 +37,11 @@ pip install pyqt5designer
 # Chuyển dối file .ui sang .py
 pyuic6 -x tênfile.ui -o tênfile.py
 
-# Chuyển thành file thực thi để dễ sử dụng'
-pyinstaller --onefile yourprogram.py
+# Chuyển thành file thực thi để dễ sử dụng
+pyinstaller --onefile --icon="icon.ico" --clean main.py
+
+
+# Thông tin tập dữ liệu thực tế
+    train:  48 ảnh
+    valid:  10 ảnh
+    test:   11 ảnh

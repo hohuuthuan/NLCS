@@ -1,7 +1,7 @@
 import os
 
 # Đường dẫn đến thư mục label
-dir_path = 'E:/NLCS/data/test/labels'
+dir_path = 'E:/NLCS/data/valid/labels'
 
 # Khởi tạo bộ đếm cho mỗi nhãn
 # Nhãn: ['Algal Leaf Spot', 'Leaf Blight', 'Leaf Spot', 'No Disease']
