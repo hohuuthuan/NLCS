@@ -7,6 +7,10 @@ Dự án gồm các cửa sổ:
 ##### Lưu ý #####
 Cần cài đặt thư viện Ultralytis và Torch cùng với CUDA để có thể thực hiện nhận dạng trên ảnh
 
+# Lệnh trên terminal, cpu hoặc gpu
+yolo task=detect mode=predict model="best.pt" source="image.jpg" --device=cpu
+
+
 # Hướng dẫn sử dụng
 Download thư mục NLCS
     Cách 1:

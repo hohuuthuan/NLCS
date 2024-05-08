@@ -1,4 +1,5 @@
 import os
+import torch
 import argparse # Xử lý các đối số dòng lệnh
 from ultralytics import YOLO
 
@@ -16,8 +17,13 @@ model_path = "E:/NLCS/models/best.pt"
 source_path = args.image_path  # Sử dụng đường dẫn hình ảnh từ dòng lệnh
 output_path = "E:/NLCS/results"  
 
+
+# Kiểm tra sự hỗ trợ của CUDA
+device = "cuda" if torch.cuda.is_available() else "cpu"
+
 # Tạo lệnh
-command = f"yolo task={task} mode={mode} model=\"{model_path}\" source=\"{source_path}\" --project=\"{output_path}\""
+command = f"yolo task={task} mode={mode} model=\"{model_path}\" source=\"{source_path}\" project=\"{output_path}\" --device={device}"
+
 
 # Chạy lệnh
 os.system(command)
